@@ -20,8 +20,8 @@ var artistSubmit = $('input').val().trim();
 
 //Go to spotify and get the artists
 function getArtistInfo() {
-	
-	var apiUrl = 'https://api.spotify.com/v1/search?q='+
+	var artist = $(this).attr('artists-name');
+	var apiUrl = 'https://api.spotify.com/v1/search?q='+ artist
 	 + '&type=artist'
 
 	$.ajax({
