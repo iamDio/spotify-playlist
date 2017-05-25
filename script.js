@@ -7,7 +7,9 @@ var artistArray = [];
 
 	// event listener for the event submit
 $('form').on('submit', function(e){
-	getArtistInfo();
+	var searchValue = $("#searchbar").val().trim()
+	console.log(searchValue)
+	getArtistInfo(searchValue);
 	e.preventDefault();
 	console.log(e);
 
@@ -19,8 +21,10 @@ var artistSubmit = $('input').val().trim();
 
 
 //Go to spotify and get the artists
-function getArtistInfo() {
-	var artist = $(this).attr('artists-name');
+function getArtistInfo(artist) {
+	console.log(artist);
+	// var performer = $(artist).attr('artists-name');
+	// console.log("this is" + performer);
 	var apiUrl = 'https://api.spotify.com/v1/search?q='+ artist
 	 + '&type=artist'
 
